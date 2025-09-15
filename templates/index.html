@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flask App - Welcome</title>
+  <title>PyroPredict</title>
   <style>
     body {
       margin: 0;
@@ -11,24 +11,54 @@
       background: linear-gradient(135deg, #6dd5ed, #2193b0);
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
       color: white;
     }
 
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 12px 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
     .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content-box {
       text-align: center;
       background: rgba(255, 255, 255, 0.1);
       padding: 40px 50px;
       border-radius: 20px;
       backdrop-filter: blur(10px);
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-      max-width: 600px;
+      max-width: 650px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
     }
 
     p {
@@ -59,17 +89,25 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🚀 Welcome to 🔥 Wildfire Risk Predictor app</h1>
-    <p>
-      This app helps you with <strong>FWI Prediction</strong> using different parameters.  
-      Enter the details, click predict, and get instant results!  
-    </p>
-    <a href="{{ url_for('predict_data') }}" class="btn">Get Started</a>
+  <!-- Nav with Logo + Name -->
+  <nav>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="PyroPredict Logo">
+    <h2>PyroPredict</h2>
+  </nav>
 
-    <footer>
-      Made with ❤️ using Flask & Python
-    </footer>
+  <div class="container">
+    <div class="content-box">
+      <h1>🔥 Welcome to PyroPredict</h1>
+      <p>
+        PyroPredict helps you estimate the <strong>Fire Weather Index (FWI)</strong>  
+        and predict wildfire risk using different parameters.  
+      </p>
+      <a href="{{ url_for('predict_data') }}" class="btn">Get Started</a>
+
+      <footer>
+        Made with ❤️ using Flask & Python
+      </footer>
+    </div>
   </div>
 </body>
 </html>
