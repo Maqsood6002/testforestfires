@@ -1,1 +1,75 @@
-<h1>Welcome to the Flask App</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask App - Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6dd5ed, #2193b0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff7675;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d63031;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Welcome to the Flask App</h1>
+    <p>
+      This app helps you with <strong>FWI Prediction</strong> using different parameters.  
+      Enter the details, click predict, and get instant results!  
+    </p>
+    <a href="{{ url_for('predict_data') }}" class="btn">Get Started</a>
+
+    <footer>
+      Made with ❤️ using Flask & Python
+    </footer>
+  </div>
+</body>
+</html>
